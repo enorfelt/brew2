@@ -215,7 +215,7 @@
                 "sy": 50,
                 "gx": 1,
                 "gy": 0,
-                "cx": 0,
+                "cx": 2,
                 "cy": 2,
                 "px": 1,
                 "py": 1
@@ -231,7 +231,7 @@
         "icon": "",
         "order": 1,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "f6e1ef23.f6f118",
@@ -285,7 +285,7 @@
         "icon": "",
         "order": 4,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "4adcb434.78650c",
@@ -295,7 +295,7 @@
         "icon": "",
         "order": 5,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "7311bc5c.585f8c",
@@ -328,7 +328,7 @@
         "icon": "dashboard",
         "order": 6,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "8d73628b.8b862",
@@ -338,7 +338,7 @@
         "tab": "c8c78fe4.1dbea",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": 7,
         "collapse": false
     },
     {
@@ -360,7 +360,7 @@
         "icon": "dashboard",
         "order": 2,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "cafd8af.6569df8",
@@ -378,17 +378,8 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "cafd8af.6569df8",
-        "order": 5,
+        "order": 7,
         "width": "6",
-        "height": 1
-    },
-    {
-        "id": "d950fab6.61d3c8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "10ebbb77.a2d955",
-        "order": 1,
-        "width": "7",
         "height": 1
     },
     {
@@ -408,7 +399,7 @@
         "icon": "dashboard",
         "order": 6,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "15146556.9c06db",
@@ -482,7 +473,7 @@
         "icon": "dashboard",
         "order": 6,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "e069eb40.1f1bf8",
@@ -631,7 +622,7 @@
         "icon": "",
         "order": 9,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "738f6882.9aadf8",
@@ -745,8 +736,8 @@
         "name": "Tap List",
         "icon": "dashboard",
         "order": 7,
-        "disabled": false,
-        "hidden": false
+        "disabled": true,
+        "hidden": true
     },
     {
         "id": "cd0d2150.b06378",
@@ -785,11 +776,12 @@
         "id": "7afb5092.447728",
         "type": "ui_group",
         "z": "",
+        "d": true,
         "name": "REMOTE DISPLAY",
         "tab": "c8c78fe4.1dbea",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": 7,
         "collapse": false
     },
     {
@@ -800,7 +792,7 @@
         "tab": "c8c78fe4.1dbea",
         "order": 3,
         "disp": false,
-        "width": "6",
+        "width": 7,
         "collapse": false
     },
     {
@@ -1003,6 +995,33 @@
         "group": "7311bc5c.585f8c",
         "order": 7,
         "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5a47122.6e69aec",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "7afb5092.447728",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e922dd4e.839d1",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "7afb5092.447728",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "81561cdc.20377",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "10ebbb77.a2d955",
+        "order": 1,
+        "width": 7,
         "height": 1
     },
     {
@@ -5245,7 +5264,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "cafd8af.6569df8",
-        "order": 3,
+        "order": 4,
         "width": "6",
         "height": 1,
         "passthru": false,
@@ -5254,8 +5273,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "2",
-        "payloadType": "num",
+        "payload": "Mash Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 120,
         "y": 420,
@@ -5271,7 +5290,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "cafd8af.6569df8",
-        "order": 4,
+        "order": 3,
         "width": "6",
         "height": 1,
         "passthru": false,
@@ -5280,8 +5299,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "3",
-        "payloadType": "num",
+        "payload": "Boil Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 120,
         "y": 500,
@@ -5306,8 +5325,8 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 100,
         "y": 460,
@@ -5332,8 +5351,8 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 100,
         "y": 540,
@@ -6900,8 +6919,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "4",
-        "payloadType": "num",
+        "payload": "General Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 120,
         "y": 260,
@@ -6926,8 +6945,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 120,
         "y": 340,
@@ -6952,8 +6971,8 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 100,
         "y": 300,
@@ -6969,7 +6988,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "cafd8af.6569df8",
-        "order": 6,
+        "order": 8,
         "width": "6",
         "height": "1",
         "passthru": false,
@@ -6978,8 +6997,8 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "0",
-        "payloadType": "num",
+        "payload": "Brew",
+        "payloadType": "str",
         "topic": "",
         "x": 110,
         "y": 380,
@@ -7982,7 +8001,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "cafd8af.6569df8",
-        "order": 4,
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -7991,8 +8010,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "5",
-        "payloadType": "num",
+        "payload": "Calibration",
+        "payloadType": "str",
         "topic": "",
         "x": 110,
         "y": 580,
@@ -8033,11 +8052,11 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 130,
-        "y": 740,
+        "y": 620,
         "wires": [
             [
                 "9f92ccc0.54cce"
@@ -11412,11 +11431,11 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "5",
-        "payloadType": "num",
+        "payload": "Mash Schedule",
+        "payloadType": "str",
         "topic": "",
         "x": 100,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "9f92ccc0.54cce"
@@ -11438,11 +11457,11 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "0",
-        "payloadType": "num",
+        "payload": "Brew",
+        "payloadType": "str",
         "topic": "",
         "x": 130,
-        "y": 660,
+        "y": 700,
         "wires": [
             [
                 "9f92ccc0.54cce"
@@ -13445,7 +13464,7 @@
         "label": "Volume",
         "tooltip": "",
         "group": "8d73628b.8b862",
-        "order": 5,
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -13520,7 +13539,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "cafd8af.6569df8",
-        "order": 3,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -13529,8 +13548,8 @@
         "color": "#757575",
         "bgcolor": "white",
         "icon": "",
-        "payload": "7",
-        "payloadType": "num",
+        "payload": "Volume Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 110,
         "y": 820,
@@ -13555,8 +13574,8 @@
         "color": "#757575",
         "bgcolor": "#e0e0e0",
         "icon": "",
-        "payload": "1",
-        "payloadType": "num",
+        "payload": "Settings",
+        "payloadType": "str",
         "topic": "",
         "x": 130,
         "y": 860,
@@ -15744,10 +15763,11 @@
         "id": "4cdaedd7.aff0e4",
         "type": "ui_button",
         "z": "b764cb6a.5d4448",
+        "d": true,
         "name": "",
         "group": "7afb5092.447728",
-        "order": 4,
-        "width": "6",
+        "order": 1,
+        "width": 6,
         "height": 1,
         "passthru": false,
         "label": "Show tap list",
@@ -15770,6 +15790,7 @@
         "id": "aef314dc.11e368",
         "type": "ui_button",
         "z": "b764cb6a.5d4448",
+        "d": true,
         "name": "",
         "group": "24e45ac3.c18436",
         "order": 2,
@@ -15954,10 +15975,11 @@
         "id": "c0d858f1.50d93",
         "type": "ui_button",
         "z": "b764cb6a.5d4448",
+        "d": true,
         "name": "",
         "group": "7afb5092.447728",
-        "order": 4,
-        "width": "6",
+        "order": 3,
+        "width": 6,
         "height": 1,
         "passthru": false,
         "label": "Show main",
@@ -15980,6 +16002,7 @@
         "id": "18f40966.7d4a37",
         "type": "ui_button",
         "z": "b764cb6a.5d4448",
+        "d": true,
         "name": "",
         "group": "cafd8af.6569df8",
         "order": 2,
@@ -15995,7 +16018,7 @@
         "payloadType": "num",
         "topic": "",
         "x": 120,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "9f92ccc0.54cce"
