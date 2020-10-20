@@ -8878,12 +8878,12 @@
         "props": [
             {
                 "p": "payload.value",
-                "v": "32000",
+                "v": "0",
                 "vt": "num"
             },
             {
                 "p": "payload.voltage",
-                "v": "1.5",
+                "v": "0",
                 "vt": "num"
             }
         ],
