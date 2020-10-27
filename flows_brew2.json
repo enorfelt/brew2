@@ -18148,7 +18148,7 @@
         "id": "fbd0d1e5.6008c",
         "type": "switch",
         "z": "63bf5070.3b5ef",
-        "name": "is silent?",
+        "name": "not silent?",
         "property": "silent",
         "propertyType": "flow",
         "rules": [
@@ -18162,7 +18162,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 760,
+        "x": 770,
         "y": 2260,
         "wires": [
             [
@@ -18177,7 +18177,7 @@
         "id": "a5d730df.9107d",
         "type": "change",
         "z": "63bf5070.3b5ef",
-        "name": "",
+        "name": "reset flow.silent = false",
         "rules": [
             {
                 "t": "set",
@@ -18192,7 +18192,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
+        "x": 1060,
         "y": 2280,
         "wires": [
             []
@@ -18254,7 +18254,7 @@
         "id": "251c272f.f0cfa8",
         "type": "switch",
         "z": "63bf5070.3b5ef",
-        "name": "is silent?",
+        "name": "silent?",
         "property": "silent",
         "propertyType": "flow",
         "rules": [
@@ -18268,7 +18268,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 760,
+        "x": 750,
         "y": 2300,
         "wires": [
             [
