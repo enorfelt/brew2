@@ -10770,7 +10770,7 @@
         "initialize": "",
         "finalize": "",
         "x": 420,
-        "y": 1680,
+        "y": 1720,
         "wires": [
             [
                 "1b46ac12.e4b14c"
@@ -11306,7 +11306,7 @@
         "initialize": "",
         "finalize": "",
         "x": 440,
-        "y": 1720,
+        "y": 1760,
         "wires": [
             [
                 "7a03f1f6.016058"
@@ -11880,7 +11880,7 @@
             "e734587f.b20158"
         ],
         "x": 275,
-        "y": 1720,
+        "y": 1760,
         "wires": [
             [
                 "4cc8ed06.3ac24c"
@@ -11898,7 +11898,7 @@
             "a847d83d.160238"
         ],
         "x": 275,
-        "y": 1680,
+        "y": 1720,
         "wires": [
             [
                 "5e4f1509.405644"
@@ -11936,7 +11936,7 @@
             "4385db5d.12e2ac"
         ],
         "x": 595,
-        "y": 1680,
+        "y": 1720,
         "wires": []
     },
     {
@@ -11948,7 +11948,7 @@
             "4385db5d.12e2ac"
         ],
         "x": 595,
-        "y": 1720,
+        "y": 1760,
         "wires": []
     },
     {
@@ -11964,7 +11964,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 660,
-        "y": 2000,
+        "y": 2060,
         "wires": []
     },
     {
@@ -11989,7 +11989,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 1800,
+        "y": 1860,
         "wires": [
             [
                 "6875bf28.6e1f08",
@@ -12018,7 +12018,7 @@
         "to": "",
         "reg": false,
         "x": 410,
-        "y": 1840,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -12036,7 +12036,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 650,
-        "y": 2040,
+        "y": 2100,
         "wires": []
     },
     {
@@ -12052,7 +12052,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "x": 680,
-        "y": 1880,
+        "y": 1940,
         "wires": []
     },
     {
@@ -12180,7 +12180,7 @@
         "fwdInMessages": true,
         "templateScope": "local",
         "x": 670,
-        "y": 1920,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -12196,7 +12196,7 @@
         "initialize": "",
         "finalize": "",
         "x": 460,
-        "y": 1920,
+        "y": 1980,
         "wires": [
             [
                 "55dd882f.b9595"
@@ -12228,7 +12228,7 @@
         "initialize": "",
         "finalize": "",
         "x": 450,
-        "y": 1880,
+        "y": 1940,
         "wires": [
             [
                 "26dc6d59.e9d762"
@@ -12245,7 +12245,7 @@
             "ceec1878.64cb48"
         ],
         "x": 275,
-        "y": 1600,
+        "y": 1640,
         "wires": [
             [
                 "a7e3b69b.00d208"
@@ -12263,7 +12263,7 @@
         "initialize": "",
         "finalize": "",
         "x": 410,
-        "y": 1600,
+        "y": 1640,
         "wires": [
             [
                 "56ee58aa.afc3a"
@@ -12279,7 +12279,7 @@
             "4385db5d.12e2ac"
         ],
         "x": 595,
-        "y": 1600,
+        "y": 1640,
         "wires": []
     },
     {
@@ -12953,8 +12953,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 400,
-        "y": 160,
+        "x": 520,
+        "y": 180,
         "wires": [
             [
                 "56507848.13bf98",
@@ -13044,7 +13044,7 @@
         "width": 2,
         "height": 1,
         "passthru": false,
-        "label": "Brew it!",
+        "label": "Load it!",
         "tooltip": "",
         "color": "#757575",
         "bgcolor": "#e0e0e0",
@@ -13052,8 +13052,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 180,
-        "y": 120,
+        "x": 200,
+        "y": 180,
         "wires": [
             [
                 "1554bd30.9843b3"
@@ -13945,7 +13945,7 @@
         "status": "Planning",
         "offset": 0,
         "limit": 10,
-        "x": 200,
+        "x": 340,
         "y": 180,
         "wires": [
             [
@@ -13964,7 +13964,7 @@
         "initialize": "",
         "finalize": "",
         "x": 410,
-        "y": 1520,
+        "y": 1560,
         "wires": [
             [
                 "8bb325c0.020da8"
@@ -13984,7 +13984,7 @@
             "c52c5732.dee9a8"
         ],
         "x": 275,
-        "y": 1520,
+        "y": 1560,
         "wires": [
             [
                 "bb080907.3aefd8"
@@ -14005,7 +14005,7 @@
             "783f3d5b.b0a2c4"
         ],
         "x": 595,
-        "y": 1520,
+        "y": 1560,
         "wires": []
     },
     {
@@ -14048,7 +14048,7 @@
             "8bb325c0.020da8"
         ],
         "x": 155,
-        "y": 2040,
+        "y": 2100,
         "wires": [
             [
                 "4f747920.a3d598",
@@ -14076,7 +14076,7 @@
         "to": "",
         "reg": false,
         "x": 410,
-        "y": 1800,
+        "y": 1860,
         "wires": [
             []
         ]
@@ -14130,8 +14130,8 @@
         "links": [
             "80b8bb52.0b2ac8"
         ],
-        "x": 875,
-        "y": 2180,
+        "x": 1015,
+        "y": 2140,
         "wires": []
     },
     {
@@ -14174,7 +14174,7 @@
             "8bb325c0.020da8"
         ],
         "x": 155,
-        "y": 1920,
+        "y": 1980,
         "wires": [
             [
                 "52ec6585.c890d4",
@@ -14481,7 +14481,7 @@
         "initialize": "",
         "finalize": "",
         "x": 420,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "39ee01c2.f5962e"
@@ -14499,7 +14499,7 @@
             "e0925fd8.eedf7"
         ],
         "x": 275,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "5173549d.bbf2ec"
@@ -14515,7 +14515,7 @@
             "4385db5d.12e2ac"
         ],
         "x": 595,
-        "y": 1640,
+        "y": 1680,
         "wires": []
     },
     {
@@ -14732,7 +14732,8 @@
         "z": "63bf5070.3b5ef",
         "name": "",
         "links": [
-            "80b8bb52.0b2ac8"
+            "80b8bb52.0b2ac8",
+            "a12e1539.d81e28"
         ],
         "x": 595,
         "y": 1480,
@@ -14758,7 +14759,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 1760,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -14813,7 +14814,7 @@
         "initialize": "",
         "finalize": "",
         "x": 420,
-        "y": 1560,
+        "y": 1600,
         "wires": [
             [
                 "b86e4cd0.e385a"
@@ -14829,7 +14830,7 @@
             "4385db5d.12e2ac"
         ],
         "x": 595,
-        "y": 1560,
+        "y": 1600,
         "wires": []
     },
     {
@@ -14842,7 +14843,7 @@
             "d185935b.1237e8"
         ],
         "x": 275,
-        "y": 1560,
+        "y": 1600,
         "wires": [
             [
                 "cffbc6df.dc8468"
@@ -15278,7 +15279,7 @@
         "initialize": "",
         "finalize": "",
         "x": 400,
-        "y": 2000,
+        "y": 2060,
         "wires": [
             [
                 "595dd666.827888"
@@ -15298,7 +15299,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "x": 650,
-        "y": 1960,
+        "y": 2020,
         "wires": []
     },
     {
@@ -15312,7 +15313,7 @@
         "initialize": "",
         "finalize": "",
         "x": 390,
-        "y": 1960,
+        "y": 2020,
         "wires": [
             [
                 "685469.d8008b98"
@@ -15331,8 +15332,8 @@
         "label": "Actual",
         "format": "{{msg.currentTemp | number:1}}°C",
         "layout": "row-spread",
-        "x": 650,
-        "y": 2080,
+        "x": 770,
+        "y": 2100,
         "wires": []
     },
     {
@@ -15370,7 +15371,7 @@
         "initialize": "",
         "finalize": "",
         "x": 400,
-        "y": 2040,
+        "y": 2100,
         "wires": [
             [
                 "5cc4c3e2.4a43ac"
@@ -18205,7 +18206,8 @@
         "y": 2260,
         "wires": [
             [
-                "ed22ad8e.2e352"
+                "ed22ad8e.2e352",
+                "869647eb.3b06f8"
             ],
             [
                 "a5d730df.9107d"
@@ -18364,8 +18366,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 840,
-        "y": 2220,
+        "x": 860,
+        "y": 2140,
         "wires": [
             [
                 "6c79bebe.5f2fa"
@@ -18398,6 +18400,121 @@
         ],
         "x": 875,
         "y": 520,
+        "wires": []
+    },
+    {
+        "id": "236ea8d6.ea3708",
+        "type": "brewfather-api-request",
+        "z": "c13d8198.c457",
+        "name": "Set Batch to Brewing",
+        "property": "selected_batch_id",
+        "propertyType": "flow",
+        "endpoint": "updatebatch",
+        "include": [],
+        "complete": false,
+        "inventoryexist": false,
+        "inventoryadjust": "",
+        "inventory": "",
+        "status": "Brewing",
+        "offset": 0,
+        "limit": 10,
+        "x": 380,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31d044b.1aed8bc",
+        "type": "link out",
+        "z": "63bf5070.3b5ef",
+        "name": "",
+        "links": [
+            "178b6060.99e72"
+        ],
+        "x": 1095,
+        "y": 2180,
+        "wires": []
+    },
+    {
+        "id": "178b6060.99e72",
+        "type": "link in",
+        "z": "c13d8198.c457",
+        "name": "Set batch to brewing",
+        "links": [
+            "31d044b.1aed8bc",
+            "d726a444.8130d8"
+        ],
+        "x": 155,
+        "y": 280,
+        "wires": [
+            [
+                "236ea8d6.ea3708"
+            ]
+        ]
+    },
+    {
+        "id": "869647eb.3b06f8",
+        "type": "function",
+        "z": "63bf5070.3b5ef",
+        "name": "update batch status if delayed",
+        "func": "var isStarted = msg.payload;\nvar scheduler = global.get(\"scheduler\");\nvar currentStep = flow.get(\"step\");\nvar steps = flow.get(\"steps\");\nvar stepType = steps[0].type;\n\nif (!isStarted && !scheduler) {\n    return null;\n}\n\nif (!isStarted && currentStep < 2 && stepType === \"delay\") {\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 910,
+        "y": 2180,
+        "wires": [
+            [
+                "31d044b.1aed8bc"
+            ]
+        ]
+    },
+    {
+        "id": "b473dd84.d4053",
+        "type": "function",
+        "z": "63bf5070.3b5ef",
+        "name": "update batch status",
+        "func": "if (msg.topic !== \"run\") {\n    return null;\n}\nvar scheduler = global.get(\"scheduler\");\nvar steps = flow.get(\"steps\");\nvar stepType = steps[0].type;\n\nif (!scheduler) {\n    return null;\n}\n\nif (stepType !== \"delay\") {\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 430,
+        "y": 1520,
+        "wires": [
+            [
+                "d726a444.8130d8"
+            ]
+        ]
+    },
+    {
+        "id": "a12e1539.d81e28",
+        "type": "link in",
+        "z": "63bf5070.3b5ef",
+        "name": "",
+        "links": [
+            "259e6caa.374b94"
+        ],
+        "x": 275,
+        "y": 1520,
+        "wires": [
+            [
+                "b473dd84.d4053"
+            ]
+        ]
+    },
+    {
+        "id": "d726a444.8130d8",
+        "type": "link out",
+        "z": "63bf5070.3b5ef",
+        "name": "",
+        "links": [
+            "178b6060.99e72"
+        ],
+        "x": 595,
+        "y": 1520,
         "wires": []
     }
 ]
