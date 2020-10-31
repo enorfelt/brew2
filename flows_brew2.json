@@ -1940,7 +1940,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "20.0",
+        "payload": "20",
         "payloadType": "num",
         "x": 160,
         "y": 1120,
@@ -1966,7 +1966,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "1",
+        "payload": "0.2",
         "payloadType": "num",
         "x": 160,
         "y": 1220,
@@ -1992,7 +1992,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "payload": "30",
+        "payload": "50",
         "payloadType": "num",
         "x": 160,
         "y": 1320,
@@ -2389,7 +2389,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "20.0",
+        "payload": "45",
         "payloadType": "num",
         "x": 120,
         "y": 840,
@@ -2415,7 +2415,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "1",
+        "payload": "0.2",
         "payloadType": "num",
         "x": 120,
         "y": 940,
@@ -2441,7 +2441,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "30",
+        "payload": "90",
         "payloadType": "num",
         "x": 120,
         "y": 1040,
@@ -8425,12 +8425,21 @@
         "type": "inject",
         "z": "b9d44243.abe73",
         "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "97.8",
+        "payload": "98",
         "payloadType": "num",
         "x": 570,
         "y": 540,
@@ -12992,7 +13001,7 @@
         "type": "function",
         "z": "c13d8198.c457",
         "name": "recipe info",
-        "func": "var batch = msg.payload;\nmsg.batchName = batch.name;\nmsg.batchNumber = batch.batchNo;\nmsg.recipeName = batch.recipe.name;\n\nreturn msg;",
+        "func": "var batch = msg.payload;\nmsg.batchName = batch.name;\nmsg.batchNumber = batch.batchNo;\nmsg.recipeName = batch.recipe.name;\n\nmsg.payload = msg.batchName + msg.batchNumber + '-' + msg.recipeName;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13001,7 +13010,8 @@
         "y": 480,
         "wires": [
             [
-                "265134f.ad242cc"
+                "265134f.ad242cc",
+                "c76fea58.7ba4a8"
             ]
         ]
     },
@@ -18361,5 +18371,33 @@
                 "6c79bebe.5f2fa"
             ]
         ]
+    },
+    {
+        "id": "619a557c.6865ec",
+        "type": "link in",
+        "z": "e2318.a76b94e88",
+        "name": "Brew label",
+        "links": [
+            "c76fea58.7ba4a8"
+        ],
+        "x": 135,
+        "y": 80,
+        "wires": [
+            [
+                "6789740.1e4250c"
+            ]
+        ]
+    },
+    {
+        "id": "c76fea58.7ba4a8",
+        "type": "link out",
+        "z": "c13d8198.c457",
+        "name": "recipe info",
+        "links": [
+            "619a557c.6865ec"
+        ],
+        "x": 875,
+        "y": 520,
+        "wires": []
     }
 ]
