@@ -890,78 +890,6 @@
         "height": 1
     },
     {
-        "id": "14ae76ac.1142a9",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "172eb1b5.c3e3ee",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c6ee64a2.117a38",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "5f3881fb.5b82d",
-        "order": 2,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "180bfd95.7f0112",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "c52d28de.8f57c8",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "7ccf2b44.d8ead4",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "c52d28de.8f57c8",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f322b12f.d9885",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "d360e2ce.52a2e",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "39f56b6c.f77824",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "d360e2ce.52a2e",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "833a3894.57d528",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "906481c9.a63c5",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c7d056fa.76e028",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "906481c9.a63c5",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "6d01ec93.b1d374",
         "type": "ui_group",
         "name": "UserEntry",
@@ -985,6 +913,78 @@
         "name": "Home",
         "icon": "home",
         "order": 1
+    },
+    {
+        "id": "c7cfc247.b782b",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "172eb1b5.c3e3ee",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2b3bdb6.114aa24",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "5f3881fb.5b82d",
+        "order": 2,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "25daafc2.278a6",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52d28de.8f57c8",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d49eebe8.1b3568",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52d28de.8f57c8",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "757f5509.01541c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "d360e2ce.52a2e",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7d9147b9.63c228",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "d360e2ce.52a2e",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1954813.f52847f",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "906481c9.a63c5",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9c3c05c0.d42cc8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "906481c9.a63c5",
+        "order": 3,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "ba5b776f.cbd1c8",
@@ -2139,7 +2139,6 @@
         "id": "3516d1c2.6cbd6e",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-BK",
         "sensorid": "28-0000062eaf09",
         "timer": "2",
@@ -2157,7 +2156,6 @@
         "id": "c83a56a2.7af0c8",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-RIMS",
         "sensorid": "28-0000062eb892",
         "timer": "2",
@@ -2178,7 +2176,6 @@
         "id": "598eede.4742214",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-MLT",
         "sensorid": "28-000007c0cb12",
         "timer": "2",
@@ -8849,12 +8846,12 @@
         "props": [
             {
                 "p": "payload.value",
-                "v": "18000",
+                "v": "0",
                 "vt": "num"
             },
             {
                 "p": "payload.voltage",
-                "v": "1.5",
+                "v": "0",
                 "vt": "num"
             }
         ],
@@ -9966,7 +9963,7 @@
         "type": "function",
         "z": "b2a662aa.2b752",
         "name": "Volume PID",
-        "func": "// Note that the algorithm provided below assumes a 1 second iteration time\n// Justin Angevaare\n// May 2018\n\n// Set temperature\nmsg.volume =  global.get('current_volume'); //msg.payload;\n\n// Well that node doesn't work... do manually\nmsg.interval = 2000\n\n// Calculate error\nmsg.error = msg.volume - flow.get('target_hold_volume');\n\n// Set output max\nmsg.max_output = 100\n\n// Calculate proportional action\nvar pTerm = msg.error * flow.get('p');\n\n// Calculate intergral action\nvar iTerm = 0;\nif (pTerm < msg.max_output) {\n    // Calculate integrator max\n    msg.integrator_max = msg.max_output/flow.get('i');\n    \n    // Update integrator\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.integrator = flow.get('integrator');\n    msg.integrator += (msg.interval/1000) * Math.max(Math.min(msg.error, 1), -1);\n    \n    // Bound total integrator by absolute maximum\n    msg.integrator = Math.max(Math.min(msg.integrator, msg.integrator_max), -msg.integrator_max);\n    \n    // Output updated integrator to flow context\n    flow.set('integrator', msg.integrator);\n    \n    iTerm = msg.integrator * flow.get('i');\n}\n\n// Calculate derivative action\nmsg.derivative = (msg.error - flow.get('last_error'))/(msg.interval/1000);\nvar dTerm = msg.derivative * flow.get('d');\nnode.warn('' + pTerm + ' ' + iTerm + ' ' + dTerm);\nmsg.output = pTerm + iTerm + dTerm;\n\n// Bound output by [0, max_output]\nmsg.output = Math.max(Math.min(msg.output, msg.max_output), 0);\n\n// Output updated last_error to flow context\nmsg.last_error = msg.error;\nflow.set('last_error', msg.last_error);\n\n// Set payload to element output\nmsg.payload = msg.output;\nreturn msg;",
+        "func": "// Note that the algorithm provided below assumes a 1 second iteration time\n// Justin Angevaare\n// May 2018\n\n// Set temperature\nmsg.volume =  global.get('current_volume'); //msg.payload;\n\n// Well that node doesn't work... do manually\nmsg.interval = 2000\n\n// Calculate error\nmsg.error = msg.volume - flow.get('target_hold_volume');\n\n// Set output max\nmsg.max_output = 100\n\n// Calculate proportional action\nvar pTerm = msg.error * flow.get('p');\n\n// Calculate intergral action\nvar iTerm = 0;\nif (pTerm < msg.max_output) {\n    // Calculate integrator max\n    msg.integrator_max = msg.max_output/flow.get('i');\n    \n    // Update integrator\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.integrator = flow.get('integrator');\n    msg.integrator += (msg.interval/1000) * Math.max(Math.min(msg.error, 1), -1);\n    \n    // Bound total integrator by absolute maximum\n    msg.integrator = Math.max(Math.min(msg.integrator, msg.integrator_max), -msg.integrator_max);\n    \n    // Output updated integrator to flow context\n    flow.set('integrator', msg.integrator);\n    \n    iTerm = msg.integrator * flow.get('i');\n}\n\n// Calculate derivative action\nmsg.derivative = (msg.error - flow.get('last_error'))/(msg.interval/1000);\nvar dTerm = msg.derivative * flow.get('d');\nmsg.output = pTerm + iTerm + dTerm;\n\n// Bound output by [0, max_output]\nmsg.output = Math.max(Math.min(msg.output, msg.max_output), 0);\n\n// Output updated last_error to flow context\nmsg.last_error = msg.error;\nflow.set('last_error', msg.last_error);\n\n// Set payload to element output\nmsg.payload = msg.output;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11266,7 +11263,7 @@
         "order": 1,
         "width": 7,
         "height": 1,
-        "passthru": false,
+        "passthru": true,
         "options": [
             {
                 "label": "Start now",
@@ -11294,7 +11291,7 @@
         "type": "function",
         "z": "63bf5070.3b5ef",
         "name": "Show/Hide scheduler",
-        "func": "if (global.get(\"scheduler\")) {\n    msg.payload = {group:{hide:[\"Mash_Schedule_Control1\", \"Mash_Schedule_Control2\"]}}\n} else {\n    if(flow.get('mash_start') === \"now\") {\n        msg.payload = {group:{hide:[\"Mash_Schedule_Control2\"]}}\n    } else {\n        msg.payload = {group:{show:[\"Mash_Schedule_Control2\"]}}\n    }\n}\nreturn msg;",
+        "func": "if (global.get(\"scheduler\")) {\n    msg.payload = {group:{hide:[\"Mash_Schedule_Control1\", \"Mash_Schedule_Control2\"]}}\n} else {\n    var mashStart = flow.get('mash_start');\n    if(mashStart === \"now\") {\n        msg.payload = {group:{hide:[\"Mash_Schedule_Control2\"]}}\n    } else {\n        msg.payload = {group:{show:[\"Mash_Schedule_Control2\"]}}\n    }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11395,7 +11392,7 @@
         "name": "Run",
         "group": "d360e2ce.52a2e",
         "order": 3,
-        "width": 2,
+        "width": "3",
         "height": 1,
         "passthru": false,
         "label": "",
@@ -12251,7 +12248,7 @@
         "type": "function",
         "z": "63bf5070.3b5ef",
         "name": "UI updates",
-        "func": "if(global.get('scheduler')){\n    msg.payload = {\n        group: {\n            show:[\n                \"Mash_Schedule_Control4\",\n                \"Mash_Schedule_MASH_SCHEDULE\"\n                ],\n            hide:[\n                \"Mash_Schedule_Control0\",\n                \"Mash_Schedule_Control1\",\n                \"Mash_Schedule_Control2\",\n                \"Mash_Schedule_Strike\",\n                \"Mash_Schedule_Rest1\",\n                \"Mash_Schedule_Rest2\",\n                \"Mash_Schedule_Rest3\",\n                \"Mash_Schedule_Rest4\"\n                ]\n            \n        }\n    };\n} else {\n    if (flow.get('mash_rests') === 0) {\n        msg.payload = {\n            group:{\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control1\",\n                    \"Mash_Schedule_Control4\",\n                    \"Mash_Schedule_Control2\"\n                    ]\n            }\n        }\n    } else if(flow.get('mash_start')== \"now\"){\n        msg.payload = {\n            group:{\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control4\"\n                    ]\n            }\n        }\n    } else {\n        msg.payload = {\n            group: {\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\",\n                    \"Mash_Schedule_Control2\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control4\"\n                    ]\n            }\n        }\n    }\n}\nreturn msg;",
+        "func": "if(global.get('scheduler')){\n    msg.payload = {\n        group: {\n            show:[\n                \"Mash_Schedule_Control4\",\n                \"Mash_Schedule_MASH_SCHEDULE\"\n                ],\n            hide:[\n                \"Mash_Schedule_Control0\",\n                \"Mash_Schedule_Control1\",\n                \"Mash_Schedule_Control2\",\n                \"Mash_Schedule_Strike\",\n                \"Mash_Schedule_Rest1\",\n                \"Mash_Schedule_Rest2\",\n                \"Mash_Schedule_Rest3\",\n                \"Mash_Schedule_Rest4\"\n                ]\n            \n        }\n    };\n} else {\n    if (flow.get('mash_rests') === 0) {\n        msg.payload = {\n            group:{\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control1\",\n                    \"Mash_Schedule_Control4\",\n                    \"Mash_Schedule_Control2\"\n                    ]\n            }\n        }\n    } else if(flow.get('mash_start') === \"now\"){\n        msg.payload = {\n            group:{\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control2\",\n                    \"Mash_Schedule_Control4\"\n                    ]\n            }\n        }\n    } else {\n        msg.payload = {\n            group: {\n                show:[\n                    \"Mash_Schedule_MASH_SCHEDULE\",\n                    \"Mash_Schedule_Control0\",\n                    \"Mash_Schedule_Control1\",\n                    \"Mash_Schedule_Control2\"\n                    ],\n                hide:[\n                    \"Mash_Schedule_Control4\"\n                    ]\n            }\n        }\n    }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14005,6 +14002,7 @@
         "id": "81856c95.29a98",
         "type": "inject",
         "z": "c13d8198.c457",
+        "d": true,
         "name": "debug batch",
         "props": [
             {
@@ -17962,6 +17960,7 @@
         "id": "a9c1bdf2.314a2",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -17991,6 +17990,7 @@
         "id": "8db4f74d.9ded98",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -18020,6 +18020,7 @@
         "id": "87fb2de8.de4fd",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -18095,6 +18096,7 @@
         "id": "55d4e2e5.229acc",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-BK",
         "label": "temp-BK",
         "tooltip": "",
@@ -18121,6 +18123,7 @@
         "id": "b262db7b.5d7048",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-RIMS",
         "label": "temp-RIMS",
         "tooltip": "",
@@ -18147,6 +18150,7 @@
         "id": "a65fc7bd.e18c48",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-MLT",
         "label": "temp-MLT",
         "tooltip": "",
@@ -18301,68 +18305,6 @@
             ],
             [
                 "5fdbdafd.e56674"
-            ]
-        ]
-    },
-    {
-        "id": "998db6a5.5367b8",
-        "type": "ui_button",
-        "z": "63bf5070.3b5ef",
-        "name": "Edit time",
-        "group": "d360e2ce.52a2e",
-        "order": 4,
-        "width": 1,
-        "height": 1,
-        "passthru": false,
-        "label": "",
-        "tooltip": "Next step",
-        "color": "",
-        "bgcolor": "grey",
-        "icon": "edit",
-        "payload": "true",
-        "payloadType": "bool",
-        "topic": "edit",
-        "x": 860,
-        "y": 1360,
-        "wires": [
-            [
-                "f5745da4.87d73"
-            ]
-        ]
-    },
-    {
-        "id": "84c8ecbf.69a72",
-        "type": "debug",
-        "z": "63bf5070.3b5ef",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 810,
-        "y": 1460,
-        "wires": []
-    },
-    {
-        "id": "f5745da4.87d73",
-        "type": "function",
-        "z": "63bf5070.3b5ef",
-        "d": true,
-        "name": "",
-        "func": "msg.payload = window.prompt(\"testar\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 920,
-        "y": 1400,
-        "wires": [
-            [
-                "84c8ecbf.69a72"
             ]
         ]
     },
