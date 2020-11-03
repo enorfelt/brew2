@@ -1387,7 +1387,7 @@
         "type": "function",
         "z": "cdc1c9a3.021f58",
         "name": "Cascade PID - main",
-        "func": "// brew2 Cascade PID algorithm\n// Justin Angevaare\n// Nov. 2019 - Oct. 2020\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n///////////////////////////////////////////////////////////////\n// Begin Outer Control Loop\n// Output from Outer Control will be the target RIMS delta T\n///////////////////////////////////////////////////////////////\n\n// Calculate outer error\nmsg.outer_target = flow.get('mash_target')\nmsg.outer_error = msg.outer_target - global.get('temp-MLT');\n\n// Calculate proportional action\nmsg.outer_output = msg.outer_error * flow.get('outer_p');\n\n// Update outer integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_integrator = flow.get('outer_integrator');\n\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.outer_integrator += msg.interval * Math.max(Math.min(msg.outer_error, 1), -1)\n    \n    // Bound total outer integrator by absolute maximum\n    msg.outer_integrator = Math.max(Math.min(msg.outer_integrator, flow.get('outer_integrator_max')), -flow.get('outer_integrator_max'));\n\n    // Output updated integrator to flow context\n    flow.set('outer_integrator', msg.outer_integrator)\n    \n    // Calculate intergral action\n    msg.outer_output += msg.outer_integrator * flow.get('outer_i');\n}\n\n// Calculate derivate and derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_derivative = (msg.outer_error - flow.get('last_outer_error'))/msg.interval\n    msg.outer_output += msg.outer_derivative * flow.get('outer_d')\n}\n\n// Bound outer_output by [outer_min, outer_max]\nmsg.outer_output = Math.max(Math.min(msg.outer_output, flow.get('outer_max')), flow.get('outer_min'));\n\n// Set inner_target\nmsg.inner_target = Math.min(msg.outer_target + msg.outer_output, 90)\n\n// Output updated last_outer_error to flow context\nmsg.last_outer_error = msg.outer_error;\nflow.set('last_outer_error', msg.last_outer_error);\n\n///////////////////////////////////////////////////////////////\n// Begin Inner Control Loop\n// Output from inner control loop will be RIMS element duty %\n///////////////////////////////////////////////////////////////\n\n// Calculate inner error\nmsg.inner_error = msg.inner_target - global.get('temp-RIMS');\n\n// Calculate proportional action\nmsg.inner_output = msg.inner_error * flow.get('inner_p');\n\n// Update inner integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_integrator = flow.get('inner_integrator');\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.inner_integrator += msg.interval * Math.max(Math.min(msg.inner_error, 1), -1);\n    \n    // Bound total inner integrator by absolute maximum\n    msg.inner_integrator = Math.max(Math.min(msg.inner_integrator, flow.get('inner_integrator_max')), -flow.get('inner_integrator_max'));\n    \n    // Output updated integrator to flow context\n    flow.set('inner_integrator', msg.inner_integrator);\n    \n    // Calculate intergral action\n    msg.inner_output += msg.inner_integrator * flow.get('inner_i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_derivative = (msg.inner_error - flow.get('last_inner_error'))/msg.interval;\n    msg.inner_output += msg.inner_derivative * flow.get('inner_d');\n}\n\n// Bound inner_output by [0.0, max_output]\nmsg.inner_output = Math.max(Math.min(msg.inner_output, flow.get('inner_max')), 0.0);\n\n// Output inner_output to flow context\nflow.set('inner_output', msg.inner_output);\n\n// Output updated last_inner_error to flow context\nmsg.last_inner_error = msg.inner_error;\nflow.set('last_inner_error', msg.last_inner_error);\n\n// Set payload to element output (inner_output)\nmsg.payload = msg.inner_output;\n\nreturn msg;",
+        "func": "// brew2 Cascade PID algorithm\n// Justin Angevaare\n// Nov. 2019 - Oct. 2020\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n///////////////////////////////////////////////////////////////\n// Begin Outer Control Loop\n// Output from Outer Control will be the target RIMS delta T\n///////////////////////////////////////////////////////////////\n\n// Calculate outer error\nmsg.outer_target = flow.get('mash_target')\nmsg.outer_error = msg.outer_target - global.get('temp-MLT');\n\n// Calculate proportional action\nmsg.outer_output = msg.outer_error * flow.get('outer_p');\n\n// Update outer integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_integrator = flow.get('outer_integrator');\n\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.outer_integrator += msg.interval * Math.max(Math.min(msg.outer_error, 1), -1)\n    \n    // Bound total outer integrator by absolute maximum\n    msg.outer_integrator = Math.max(Math.min(msg.outer_integrator, flow.get('outer_integrator_max')), -flow.get('outer_integrator_max'));\n\n    // Output updated integrator to flow context\n    flow.set('outer_integrator', msg.outer_integrator)\n    \n    // Calculate intergral action\n    msg.outer_output += msg.outer_integrator * flow.get('outer_i');\n}\n\n// Calculate derivate and derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_derivative = (msg.outer_error - flow.get('last_outer_error'))/msg.interval\n    msg.outer_output += msg.outer_derivative * flow.get('outer_d')\n}\n\n// Bound outer_output by [outer_min, outer_max]\nmsg.outer_output = Math.max(Math.min(msg.outer_output, flow.get('outer_max')), flow.get('outer_min'));\n\n// Set inner_target\nmsg.inner_target = Math.min(msg.outer_target + msg.outer_output, 90)\n\n// Output updated last_outer_error to flow context\nmsg.last_outer_error = msg.outer_error;\nflow.set('last_outer_error', msg.last_outer_error);\n\n///////////////////////////////////////////////////////////////\n// Begin Inner Control Loop\n// Output from inner control loop will be RIMS element duty %\n///////////////////////////////////////////////////////////////\n\n// Calculate inner error\nmsg.inner_error = msg.inner_target - global.get('temp-RIMS');\n\n// Calculate proportional action\nmsg.inner_output = msg.inner_error * flow.get('inner_p');\n\n// Update inner integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_integrator = flow.get('inner_integrator');\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.inner_integrator += msg.interval * Math.max(Math.min(msg.inner_error, 1), -1);\n    \n    // Bound total inner integrator by absolute maximum\n    msg.inner_integrator = Math.max(Math.min(msg.inner_integrator, flow.get('inner_integrator_max')), -flow.get('inner_integrator_max'));\n    \n    // Output updated integrator to flow context\n    flow.set('inner_integrator', msg.inner_integrator);\n    \n    // Calculate intergral action\n    msg.inner_output += msg.inner_integrator * flow.get('inner_i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_derivative = (msg.inner_error - flow.get('last_inner_error'))/msg.interval;\n    msg.inner_output += msg.inner_derivative * flow.get('inner_d');\n}\n\n// Bound inner_output by [0.0, max_output]\nmsg.inner_output = Math.round(Math.max(Math.min(msg.inner_output, flow.get('inner_max')), 0.0));\n\n// Output inner_output to flow context\nflow.set('inner_output', msg.inner_output);\n\n// Output updated last_inner_error to flow context\nmsg.last_inner_error = msg.inner_error;\nflow.set('last_inner_error', msg.last_inner_error);\n\n// Set payload to element output (inner_output)\nmsg.payload = msg.inner_output;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2483,7 +2483,7 @@
         "type": "function",
         "z": "1e878673.29136a",
         "name": "BK PID",
-        "func": "// Note that the algorithm provided below assumes a 1 second iteration time\n// Justin Angevaare\n// May 2018 - Oct 2020\n\n// Set temperature\n//msg.temperature =  global.get('temp-BK')\nmsg.temperature = msg.payload;\n\n// Set output max\nmsg.max_output = 100\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n// Calculate error\nmsg.error = flow.get('bk_target') - msg.temperature;\n\n// Calculate proportional action\nmsg.output = msg.error * flow.get('p');\n\n// Update integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    // Calculate integrator max\n    msg.integrator_max = msg.max_output/Math.max(flow.get('i'), 2.0);\n    \n    // Update integrator\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.integrator = flow.get('integrator');\n    msg.integrator += msg.interval * Math.max(Math.min(msg.error, 1), -1);\n    \n    // Bound total integrator by absolute maximum\n    msg.integrator = Math.max(Math.min(msg.integrator, msg.integrator_max), -msg.integrator_max);\n    \n    // Output updated integrator to flow context\n    flow.set('integrator', msg.integrator);\n    \n    // Calculate intergral action\n    msg.output += msg.integrator * flow.get('i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.derivative = (msg.error - flow.get('last_error'))/msg.interval;\n    msg.output += msg.derivative * flow.get('d');\n}\n\n// Output updated last_error to flow context\nmsg.last_error = msg.error;\nflow.set('last_error', msg.last_error);\n\n// Bound output by [0, max_output]\nmsg.output = Math.max(Math.min(msg.output, msg.max_output), 0);\n\n// Output element output to flow context\nflow.set('output', msg.output);\n\n// Set payload to element output\nmsg.payload = msg.output;\nreturn msg;",
+        "func": "// Note that the algorithm provided below assumes a 1 second iteration time\n// Justin Angevaare\n// May 2018 - Oct 2020\n\n// Set temperature\n//msg.temperature =  global.get('temp-BK')\nmsg.temperature = msg.payload;\n\n// Set output max\nmsg.max_output = 100\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n// Calculate error\nmsg.error = flow.get('bk_target') - msg.temperature;\n\n// Calculate proportional action\nmsg.output = msg.error * flow.get('p');\n\n// Update integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    // Calculate integrator max\n    msg.integrator_max = msg.max_output/Math.max(flow.get('i'), 2.0);\n    \n    // Update integrator\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.integrator = flow.get('integrator');\n    msg.integrator += msg.interval * Math.max(Math.min(msg.error, 1), -1);\n    \n    // Bound total integrator by absolute maximum\n    msg.integrator = Math.max(Math.min(msg.integrator, msg.integrator_max), -msg.integrator_max);\n    \n    // Output updated integrator to flow context\n    flow.set('integrator', msg.integrator);\n    \n    // Calculate intergral action\n    msg.output += msg.integrator * flow.get('i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.derivative = (msg.error - flow.get('last_error'))/msg.interval;\n    msg.output += msg.derivative * flow.get('d');\n}\n\n// Output updated last_error to flow context\nmsg.last_error = msg.error;\nflow.set('last_error', msg.last_error);\n\n// Bound output by [0, max_output]\nmsg.output = Math.round(Math.max(Math.min(msg.output, msg.max_output), 0));\n\n// Output element output to flow context\nflow.set('output', msg.output);\n\n// Set payload to element output\nmsg.payload = msg.output;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2581,8 +2581,7 @@
         "y": 100,
         "wires": [
             [
-                "611bae86.6497c",
-                "817523f5.3814c"
+                "611bae86.6497c"
             ]
         ]
     },
@@ -2786,7 +2785,7 @@
         "repair": false,
         "outputs": 1,
         "x": 150,
-        "y": 140,
+        "y": 100,
         "wires": [
             [
                 "eed429e6.df64c8"
@@ -2851,8 +2850,9 @@
         "z": "1e878673.29136a",
         "name": "Off Duty",
         "links": [
+            "4fe29801.47882",
             "84dd404a.ab7a7",
-            "c3ca6978.572d5"
+            "e5862b2d.b56798"
         ],
         "x": 535,
         "y": 1500,
@@ -2982,7 +2982,9 @@
         "name": "RIMS OFF (GPIO)",
         "links": [
             "24145682.3f917a",
-            "9873df80.46702"
+            "3bcfd4dd.7dc404",
+            "9873df80.46702",
+            "d712ce59.19ef1"
         ],
         "x": 575,
         "y": 1860,
@@ -3325,10 +3327,10 @@
         "name": "Initializations",
         "links": [
             "123ff4f9.df085b",
+            "47363a29.23e8a4",
             "987c2900.a5a87",
             "ac538d8e.a1ade8",
             "b3e11a30.e34f4",
-            "47363a29.23e8a4",
             "d51ff474.a48fe"
         ],
         "x": 335,
@@ -6216,7 +6218,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "1",
+        "payload": "5",
         "payloadType": "num",
         "x": 150,
         "y": 620,
@@ -6268,7 +6270,7 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "payload": "0",
+        "payload": "50",
         "payloadType": "num",
         "x": 150,
         "y": 820,
@@ -6374,8 +6376,8 @@
         "topic": "",
         "format": "{{value | number:1}}",
         "min": 0,
-        "max": "100",
-        "step": "0.2",
+        "max": "200",
+        "step": "1",
         "x": 490,
         "y": 860,
         "wires": [
@@ -6523,7 +6525,7 @@
         "type": "function",
         "z": "cdc1c9a3.021f58",
         "name": "Cascade PID - integrator max calculation",
-        "func": "// brew2 PID algorithm - integrators\n// Justin Angevaare\n// May 2018 - Oct. 2020\n\n// Calculate outer integrator max\n// Output to flow context\nif(flow.get('outer_i')>0.0){\n    flow.set('outer_integrator_max', (flow.get('outer_max')-flow.get('outer_min'))/Math.max(flow.get('outer_i'), 2.0))}else {\n        flow.set('outer_integrator_max', 0.0)}\n\n// Get current output max\n// Output to flow context\nif(global.get('rims_limiter')){\n    flow.set('inner_max', flow.get('inner_limit'))}else {\n        flow.set('inner_max', 100)}\n\n// Calculate inner integrator max\n// Output to flow context\nif(flow.get('inner_i')>0.0){\n    flow.set('inner_integrator_max', flow.get('inner_max')/Math.max(flow.get('inner_i'), 2.0))}else {\n        flow.set('inner_integrator_max', 0.0)}\n\nreturn msg;",
+        "func": "// brew2 PID algorithm - integrators\n// Justin Angevaare\n// May 2018 - Oct. 2020\n\n// Calculate outer integrator max\n// Output to flow context\nif(flow.get('outer_i')>0.0){\n    flow.set('outer_integrator_max', (flow.get('outer_max')-flow.get('outer_min'))/Math.max(flow.get('outer_i'), 4.0))}else {\n        flow.set('outer_integrator_max', 0.0)}\n\n// Get current output max\n// Output to flow context\nif(global.get('rims_limiter')){\n    flow.set('inner_max', flow.get('inner_limit'))}else {\n        flow.set('inner_max', 100)}\n\n// Calculate inner integrator max\n// Output to flow context\nif(flow.get('inner_i')>0.0){\n    flow.set('inner_integrator_max', flow.get('inner_max')/Math.max(flow.get('inner_i'), 4.0))}else {\n        flow.set('inner_integrator_max', 0.0)}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6747,7 +6749,7 @@
         "id": "6ce6448.f7e59bc",
         "type": "link in",
         "z": "4ef08725.8fbdd",
-        "name": "",
+        "name": "Mash target slider updates",
         "links": [
             "64f4ecd7.223dac",
             "edaf2c9d.be53"
@@ -7132,31 +7134,6 @@
         "reg": false,
         "x": 350,
         "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "817523f5.3814c",
-        "type": "change",
-        "z": "1e878673.29136a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "temp-BK",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 190,
-        "y": 60,
         "wires": [
             []
         ]
@@ -16142,7 +16119,8 @@
         "name": "BK Element display 1",
         "links": [
             "fef8865a.aead48",
-            "4262b3a2.405a6c"
+            "4262b3a2.405a6c",
+            "8a2f00e7.8fabc8"
         ],
         "x": 175,
         "y": 260,
@@ -16159,7 +16137,8 @@
         "name": "RIMS element display 1",
         "links": [
             "42931abc.fbf8b4",
-            "6d289a6.79280e4"
+            "6d289a6.79280e4",
+            "f9ae67d0.ea6dc"
         ],
         "x": 175,
         "y": 100,
@@ -17518,7 +17497,8 @@
         "z": "44130c7e.f0c1fc",
         "name": "RIMS element display 2",
         "links": [
-            "42931abc.fbf8b4"
+            "42931abc.fbf8b4",
+            "f9ae67d0.ea6dc"
         ],
         "x": 175,
         "y": 140,
@@ -17534,7 +17514,8 @@
         "z": "44130c7e.f0c1fc",
         "name": "BK Element display 2",
         "links": [
-            "fef8865a.aead48"
+            "fef8865a.aead48",
+            "8a2f00e7.8fabc8"
         ],
         "x": 175,
         "y": 300,
@@ -18515,6 +18496,143 @@
         ],
         "x": 595,
         "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "2a4b9b18.4ca76c",
+        "type": "tab",
+        "label": "20x4 LCD Screen",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "38d08afc.ddd65e",
+        "type": "tab",
+        "label": "Case fan",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "baa7f1a3.5697e8",
+        "type": "LCD20x4-I2C",
+        "z": "2a4b9b18.4ca76c",
+        "name": "",
+        "speed": "3",
+        "size": "20x4",
+        "address": "0x27",
+        "x": 170,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "25cceea5.bdaca2",
+        "type": "function",
+        "z": "2a4b9b18.4ca76c",
+        "name": "",
+        "func": "temp1 = \"\";\ntemp2 = \"\";\ntemp3 = \"\";\nmsg.payload = {\n    msgs: [\n        {\n            msg: \"brew2\"\n        },\n        {\n            msg: temp1.concat(\n                \"MLT: \", // 6 char\n                global.get(\"temp-MLT\").toFixed(1), // 3-4 char\n                \"°C\") // 2 char\n        },\n        {\n            msg : temp2.concat(\n                \"RIMS: \", // 6 char\n                global.get(\"temp-RIMS\").toFixed(1), // 3-4 char\n                \"°C\") // 2 char\n            \n        },\n        {\n            msg : temp3.concat(\n                \"BK: \", // 5 char\n                global.get(\"temp-BK\").toFixed(1), // 3-4 char\n                \"°C\") // 2 char\n            \n        }\n    ]\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "baa7f1a3.5697e8"
+            ]
+        ]
+    },
+    {
+        "id": "99f9f3b7.afce08",
+        "type": "inject",
+        "z": "2a4b9b18.4ca76c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "8",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "25cceea5.bdaca2"
+            ]
+        ]
+    },
+    {
+        "id": "b93a0576.28b88",
+        "type": "change",
+        "z": "cae39ee2.e2c898",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp-BK",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed9116c9.118f9",
+        "type": "inject",
+        "z": "38d08afc.ddd65e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "2e370e4d.428cf2"
+            ]
+        ]
+    },
+    {
+        "id": "2e370e4d.428cf2",
+        "type": "rpi-gpio out",
+        "z": "38d08afc.ddd65e",
+        "name": "",
+        "pin": "29",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 280,
+        "y": 80,
         "wires": []
     }
 ]
