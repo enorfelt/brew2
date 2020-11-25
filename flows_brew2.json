@@ -1886,7 +1886,6 @@
         "id": "3516d1c2.6cbd6e",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-BK",
         "sensorid": "28-0000062eaf09",
         "timer": "2",
@@ -1904,7 +1903,6 @@
         "id": "c83a56a2.7af0c8",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-RIMS",
         "sensorid": "28-0000062eb892",
         "timer": "2",
@@ -1925,7 +1923,6 @@
         "id": "598eede.4742214",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "temp-MLT",
         "sensorid": "28-000007c0cb12",
         "timer": "2",
@@ -7833,12 +7830,12 @@
         "props": [
             {
                 "p": "payload.value",
-                "v": "18000",
+                "v": "0",
                 "vt": "num"
             },
             {
                 "p": "payload.voltage",
-                "v": "1.5",
+                "v": "0",
                 "vt": "num"
             }
         ],
@@ -16677,6 +16674,7 @@
         "id": "a9c1bdf2.314a2",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -16706,6 +16704,7 @@
         "id": "8db4f74d.9ded98",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -16735,6 +16734,7 @@
         "id": "87fb2de8.de4fd",
         "type": "inject",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -16810,6 +16810,7 @@
         "id": "55d4e2e5.229acc",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-BK",
         "label": "temp-BK",
         "tooltip": "",
@@ -16836,6 +16837,7 @@
         "id": "b262db7b.5d7048",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-RIMS",
         "label": "temp-RIMS",
         "tooltip": "",
@@ -16862,6 +16864,7 @@
         "id": "a65fc7bd.e18c48",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "debug temp-MLT",
         "label": "temp-MLT",
         "tooltip": "",
