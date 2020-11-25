@@ -977,8 +977,8 @@
         "usetls": false,
         "tls": "",
         "influxdbVersion": "2.0",
-        "url": "http://localhost:8086",
-        "rejectUnauthorized": true
+        "url": "http://172.18.0.2:8086",
+        "rejectUnauthorized": false
     },
     {
         "id": "ba5b776f.cbd1c8",
@@ -1886,6 +1886,7 @@
         "id": "3516d1c2.6cbd6e",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "temp-BK",
         "sensorid": "28-0000062eaf09",
         "timer": "2",
@@ -1903,6 +1904,7 @@
         "id": "c83a56a2.7af0c8",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "temp-RIMS",
         "sensorid": "28-0000062eb892",
         "timer": "2",
@@ -1923,6 +1925,7 @@
         "id": "598eede.4742214",
         "type": "sensor-ds18b20",
         "z": "cae39ee2.e2c898",
+        "d": true,
         "name": "temp-MLT",
         "sensorid": "28-000007c0cb12",
         "timer": "2",
@@ -6234,8 +6237,8 @@
         "precision": "",
         "retentionPolicy": "",
         "org": "",
-        "x": 420,
-        "y": 680,
+        "x": 990,
+        "y": 580,
         "wires": [
             [
                 "112bb0fd.24915f"
@@ -6252,8 +6255,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 410,
-        "y": 720,
+        "x": 1250,
+        "y": 580,
         "wires": [
             [
                 "773e9b21.018914"
@@ -6270,8 +6273,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 360,
-        "y": 640,
+        "x": 720,
+        "y": 580,
         "wires": [
             [
                 "4ba13c64.7fce34"
@@ -6297,7 +6300,7 @@
         "y": 600,
         "wires": [
             [
-                "e5443a71.7e01c"
+                "be9a8ad1.1b91b8"
             ]
         ]
     },
@@ -6543,8 +6546,8 @@
         "precision": "",
         "retentionPolicy": "",
         "name": "",
-        "x": 920,
-        "y": 780,
+        "x": 900,
+        "y": 800,
         "wires": []
     },
     {
@@ -6732,8 +6735,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 460,
-        "y": 760,
+        "x": 440,
+        "y": 780,
         "wires": [
             [
                 "90401afe.e9bef"
@@ -6886,7 +6889,8 @@
             [
                 "febd6b09.61a13",
                 "ba5b776f.cbd1c8",
-                "737daba5.b4f1e4"
+                "737daba5.b4f1e4",
+                "b93a0576.28b88"
             ]
         ]
     },
@@ -15307,8 +15311,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 470,
-        "y": 800,
+        "x": 450,
+        "y": 820,
         "wires": [
             [
                 "bef6ed12.f92fe"
@@ -16671,7 +16675,6 @@
         "id": "a9c1bdf2.314a2",
         "type": "inject",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "",
         "props": [
             {
@@ -16701,7 +16704,6 @@
         "id": "8db4f74d.9ded98",
         "type": "inject",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "",
         "props": [
             {
@@ -16731,7 +16733,6 @@
         "id": "87fb2de8.de4fd",
         "type": "inject",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "",
         "props": [
             {
@@ -16807,7 +16808,6 @@
         "id": "55d4e2e5.229acc",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "debug temp-BK",
         "label": "temp-BK",
         "tooltip": "",
@@ -16834,7 +16834,6 @@
         "id": "b262db7b.5d7048",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "debug temp-RIMS",
         "label": "temp-RIMS",
         "tooltip": "",
@@ -16861,7 +16860,6 @@
         "id": "a65fc7bd.e18c48",
         "type": "ui_numeric",
         "z": "cae39ee2.e2c898",
-        "d": true,
         "name": "debug temp-MLT",
         "label": "temp-MLT",
         "tooltip": "",
@@ -17735,7 +17733,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "false",
+        "payload": "true",
         "payloadType": "bool",
         "x": 570,
         "y": 40,
@@ -17802,18 +17800,6 @@
         ]
     },
     {
-        "id": "ea0714e1.afdcc8",
-        "type": "influxdb batch",
-        "z": "e2318.a76b94e88",
-        "influxdb": "ea29760c.3042e8",
-        "precision": "",
-        "retentionPolicy": "",
-        "name": "",
-        "x": 920,
-        "y": 820,
-        "wires": []
-    },
-    {
         "id": "bef6ed12.f92fe",
         "type": "switch",
         "z": "e2318.a76b94e88",
@@ -17831,14 +17817,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 670,
-        "y": 800,
+        "x": 650,
+        "y": 820,
         "wires": [
             [
                 "1e6856d6.70ca49"
             ],
             [
-                "ea0714e1.afdcc8"
+                "25807ef7.58ca92"
             ]
         ]
     },
@@ -17846,6 +17832,7 @@
         "id": "ed1e6f72.2bc58",
         "type": "influxdb batch",
         "z": "e2318.a76b94e88",
+        "d": true,
         "influxdb": "ea29760c.3042e8",
         "precision": "",
         "retentionPolicy": "",
@@ -17882,5 +17869,124 @@
                 "ed1e6f72.2bc58"
             ]
         ]
+    },
+    {
+        "id": "be9a8ad1.1b91b8",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 600,
+        "wires": [
+            [
+                "e5443a71.7e01c"
+            ],
+            [
+                "8865fa4e.159038"
+            ]
+        ]
+    },
+    {
+        "id": "5d1cf281.8a7fbc",
+        "type": "influxdb in",
+        "z": "e2318.a76b94e88",
+        "influxdb": "ea29760c.3042e8",
+        "name": "Find last logged temp in influxdb",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "brew2",
+        "x": 990,
+        "y": 620,
+        "wires": [
+            [
+                "5d34276a.d3bf18"
+            ]
+        ]
+    },
+    {
+        "id": "8865fa4e.159038",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Construct query to influxdb",
+        "func": "const query = `from(bucket: \"brew2\")\n    |> range(start:-1h)\n    |> filter(fn: (r) =>\n        r._measurement == \"${msg.topic}\" and\n        r._field == \"temperature\"\n    )\n    |> last()\n`\nmsg.query = query;\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 720,
+        "y": 620,
+        "wires": [
+            [
+                "5d1cf281.8a7fbc"
+            ]
+        ]
+    },
+    {
+        "id": "25807ef7.58ca92",
+        "type": "influxdb out",
+        "z": "e2318.a76b94e88",
+        "influxdb": "ea29760c.3042e8",
+        "name": "",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "brew2",
+        "bucket": "brew2",
+        "x": 900,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "5d34276a.d3bf18",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Construct log entry",
+        "func": "if(msg.payload.length === 0 || Math.abs(msg.payload[0]._value - global.get(msg.topic)) >= global.get(\"temp_log_delta\")){\n    node.warn('hiiit ' + global.get(\"temp-BK\"));\n    msg.measurement = msg.topic;\n    msg.payload =  {\n            temperature: global.get(msg.topic),\n            brew: global.get(\"brew-label\")\n        };\n    msg.timestamp = new Date();\n    return msg;\n} else {\n    return null\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 620,
+        "wires": [
+            [
+                "773e9b21.018914"
+            ]
+        ]
+    },
+    {
+        "id": "834bac3c.e9919",
+        "type": "debug",
+        "z": "e2318.a76b94e88",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 700,
+        "wires": []
     }
 ]
