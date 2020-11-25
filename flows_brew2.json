@@ -7831,12 +7831,12 @@
         "props": [
             {
                 "p": "payload.value",
-                "v": "0",
+                "v": "18000",
                 "vt": "num"
             },
             {
                 "p": "payload.voltage",
-                "v": "0",
+                "v": "1.5",
                 "vt": "num"
             }
         ],
@@ -17959,7 +17959,7 @@
         "type": "function",
         "z": "e2318.a76b94e88",
         "name": "Construct log entry",
-        "func": "if(msg.payload.length === 0 || Math.abs(msg.payload[0]._value - global.get(msg.topic)) >= global.get(\"temp_log_delta\")){\n    node.warn('hiiit ' + global.get(\"temp-BK\"));\n    msg.measurement = msg.topic;\n    msg.payload =  {\n            temperature: global.get(msg.topic),\n            brew: global.get(\"brew-label\")\n        };\n    msg.timestamp = new Date();\n    return msg;\n} else {\n    return null\n}",
+        "func": "if(msg.payload.length === 0 || Math.abs(msg.payload[0]._value - global.get(msg.topic)) >= global.get(\"temp_log_delta\")){\n    msg.measurement = msg.topic;\n    msg.payload =  [\n        {\n            temperature: global.get(msg.topic),\n            time: new Date()\n        },\n        {\n            brew: global.get(\"brew-label\")\n        }\n        ];\n    return msg;\n} else {\n    return null\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
