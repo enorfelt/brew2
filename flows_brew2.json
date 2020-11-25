@@ -2133,8 +2133,8 @@
         "links": [
             "737daba5.b4f1e4"
         ],
-        "x": 55,
-        "y": 100,
+        "x": 215,
+        "y": 40,
         "wires": [
             [
                 "611bae86.6497c"
@@ -2709,8 +2709,7 @@
         "z": "cdc1c9a3.021f58",
         "name": "Mash PID display",
         "links": [
-            "3f2878d3.94f4e",
-            "9b38e36.91e49a"
+            "3f2878d3.94f4e"
         ],
         "x": 655,
         "y": 60,
@@ -2887,7 +2886,8 @@
             "987c2900.a5a87",
             "ac538d8e.a1ade8",
             "b3e11a30.e34f4",
-            "d51ff474.a48fe"
+            "d51ff474.a48fe",
+            "ef3399af.f4985"
         ],
         "x": 335,
         "y": 920,
@@ -4254,14 +4254,11 @@
         "name": "",
         "props": [
             {
-                "p": "payload",
-                "v": "",
-                "vt": "date"
+                "p": "payload"
             },
             {
                 "p": "topic",
-                "v": "",
-                "vt": "string"
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -4661,7 +4658,8 @@
         "z": "cdc1c9a3.021f58",
         "name": "rims_limiter switcher",
         "links": [
-            "2aa6a038.2a82b"
+            "2aa6a038.2a82b",
+            "83772e32.d03bd"
         ],
         "x": 225,
         "y": 1000,
@@ -6237,8 +6235,8 @@
         "precision": "",
         "retentionPolicy": "",
         "org": "",
-        "x": 990,
-        "y": 580,
+        "x": 490,
+        "y": 760,
         "wires": [
             [
                 "112bb0fd.24915f"
@@ -6255,8 +6253,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
-        "y": 580,
+        "x": 770,
+        "y": 620,
         "wires": [
             [
                 "773e9b21.018914"
@@ -6273,8 +6271,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 720,
-        "y": 580,
+        "x": 440,
+        "y": 680,
         "wires": [
             [
                 "4ba13c64.7fce34"
@@ -6477,11 +6475,13 @@
         "func": "msg.payload = [\n    {\n        measurement: \"PID-mash-inner-loop\",\n        fields: {\n            target: msg.inner_target,\n            output: msg.inner_output,\n            error: msg.last_inner_error,\n            integrator: msg.inner_integrator,\n            derivative: msg.inner_derivative,\n            //active: global.get(\"rims_on\"),\n            brew: global.get(\"brew-label\")\n        },\n        timestamp: new Date()\n    }\n];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1250,
-        "y": 1020,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 980,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -6516,8 +6516,8 @@
         "precision": "",
         "retentionPolicy": "",
         "name": "",
-        "x": 1740,
-        "y": 1020,
+        "x": 1760,
+        "y": 980,
         "wires": []
     },
     {
@@ -6530,11 +6530,11 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
-        "y": 920,
+        "x": 1450,
+        "y": 820,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -6546,8 +6546,8 @@
         "precision": "",
         "retentionPolicy": "",
         "name": "",
-        "x": 900,
-        "y": 800,
+        "x": 1340,
+        "y": 700,
         "wires": []
     },
     {
@@ -6621,11 +6621,13 @@
         "func": "msg.payload = [\n    {\n        measurement: \"output-RIMS\",\n        fields: {\n            duty: msg.payload,\n            brew: global.get(\"brew-label\")\n        },\n        timestamp: new Date()\n    }\n];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1250,
-        "y": 1120,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 1140,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -6639,11 +6641,11 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
-        "y": 960,
+        "x": 1450,
+        "y": 900,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -6735,8 +6737,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 440,
-        "y": 780,
+        "x": 1020,
+        "y": 640,
         "wires": [
             [
                 "90401afe.e9bef"
@@ -6762,8 +6764,8 @@
         "y": 1040,
         "wires": [
             [
-                "f52c348.3c13fc8",
-                "7157ddb4.749094"
+                "2104da9.bf76026",
+                "32e537d7.b4dd28"
             ]
         ]
     },
@@ -6786,7 +6788,7 @@
         "y": 920,
         "wires": [
             [
-                "da73f766.a02b1"
+                "b66d3f0e.96db6"
             ]
         ]
     },
@@ -6809,7 +6811,7 @@
         "y": 1120,
         "wires": [
             [
-                "44af71b8.d965b"
+                "5c9094dd.355a7c"
             ]
         ]
     },
@@ -6832,7 +6834,7 @@
         "y": 960,
         "wires": [
             [
-                "718d7f81.ae9dd"
+                "286e0a7.7e86bf6"
             ]
         ]
     },
@@ -6846,11 +6848,11 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
+        "x": 1450,
         "y": 1060,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -12352,11 +12354,11 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
-        "y": 1200,
+        "x": 1450,
+        "y": 1220,
         "wires": [
             [
-                "b66d3f0e.96db6"
+                "8f6e90af.f9fed8"
             ]
         ]
     },
@@ -12379,7 +12381,7 @@
         "y": 1200,
         "wires": [
             [
-                "68c8628b.7cf11c"
+                "49054b64.3060d4"
             ]
         ]
     },
@@ -15311,8 +15313,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 450,
-        "y": 820,
+        "x": 1030,
+        "y": 680,
         "wires": [
             [
                 "bef6ed12.f92fe"
@@ -17703,7 +17705,7 @@
         "type": "function",
         "z": "cdc1c9a3.021f58",
         "name": "Cascade PID",
-        "func": "///////////////////////////////////////////////////////////////\n// brew2 Cascade PID algorithm\n// Justin Angevaare\n// Nov. 2019 - Nov. 2020\n///////////////////////////////////////////////////////////////\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n///////////////////////////////////////////////////////////////\n// Begin Outer Control Loop\n// Output from Outer Control will be the target RIMS delta T\n///////////////////////////////////////////////////////////////\n\n// Calculate outer error\nmsg.outer_target = flow.get('mash_target')\nmsg.outer_error = msg.outer_target - global.get('temp-MLT');\n\n// Calculate proportional action\nmsg.outer_output = msg.outer_error * flow.get('outer_p');\n\n// Update outer integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_integrator = flow.get('outer_integrator');\n\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.outer_integrator += msg.interval * Math.max(Math.min(msg.outer_error, 1), -1)\n    \n    // Bound total outer integrator by absolute maximum\n    msg.outer_integrator = Math.max(Math.min(msg.outer_integrator, flow.get('outer_integrator_max')), -flow.get('outer_integrator_max'));\n\n    // Output updated integrator to flow context\n    flow.set('outer_integrator', msg.outer_integrator)\n    \n    // Calculate intergral action\n    msg.outer_output += msg.outer_integrator * flow.get('outer_i');\n}\n\n// Calculate derivate and derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_derivative = (msg.outer_error - flow.get('last_outer_error'))/msg.interval\n    msg.outer_output += msg.outer_derivative * flow.get('outer_d')\n}\n\n// Bound outer_output by [outer_min, outer_max]\nmsg.outer_output = Math.max(Math.min(msg.outer_output, flow.get('outer_max')), flow.get('outer_min'));\n\n// Set inner_target\nmsg.inner_target = Math.min(msg.outer_target + msg.outer_output, 90)\n\n// Output updated last_outer_error to flow context\nmsg.last_outer_error = msg.outer_error;\nflow.set('last_outer_error', msg.last_outer_error);\n\n///////////////////////////////////////////////////////////////\n// Begin Inner Control Loop\n// Output from inner control loop will be RIMS element duty %\n///////////////////////////////////////////////////////////////\n\n// Calculate inner error\nmsg.inner_error = msg.inner_target - global.get('temp-RIMS');\n\n// Calculate proportional action\nmsg.inner_output = msg.inner_error * flow.get('inner_p');\n\n// Update inner integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_integrator = flow.get('inner_integrator');\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.inner_integrator += msg.interval * Math.max(Math.min(msg.inner_error, 1), -1);\n    \n    // Bound total inner integrator by absolute maximum\n    msg.inner_integrator = Math.max(Math.min(msg.inner_integrator, flow.get('inner_integrator_max')), -flow.get('inner_integrator_max'));\n    \n    // Output updated integrator to flow context\n    flow.set('inner_integrator', msg.inner_integrator);\n    \n    // Calculate intergral action\n    msg.inner_output += msg.inner_integrator * flow.get('inner_i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_derivative = (msg.inner_error - flow.get('last_inner_error'))/msg.interval;\n    msg.inner_output += msg.inner_derivative * flow.get('inner_d');\n}\n\n// Bound inner_output by [0.0, max_output]\nmsg.inner_output = Math.round(Math.max(Math.min(msg.inner_output, flow.get('inner_max')), 0.0));\n\n// Output inner_output to flow context\nflow.set('inner_output', msg.inner_output);\n\n// Output updated last_inner_error to flow context\nmsg.last_inner_error = msg.inner_error;\nflow.set('last_inner_error', msg.last_inner_error);\n\n// Set payload to element output (inner_output)\nmsg.payload = msg.inner_output;\n\nreturn msg;",
+        "func": "///////////////////////////////////////////////////////////////\n// brew2 Cascade PID algorithm\n// Justin Angevaare\n// Nov. 2019 - Nov. 2020\n///////////////////////////////////////////////////////////////\n\n// Determine update interval\n// Will be NaN if first iteration\nmsg.epochseconds = new Date() / 1000\nmsg.interval = msg.epochseconds - flow.get('last_calc_time')\nflow.set('last_calc_time', msg.epochseconds)\n\n///////////////////////////////////////////////////////////////\n// Begin Outer Control Loop\n// Output from Outer Control will be the target RIMS delta T\n///////////////////////////////////////////////////////////////\n\n// Calculate outer error\nmsg.outer_target = flow.get('mash_target')\nmsg.outer_error = msg.outer_target - global.get('temp-MLT');\n\n// Calculate proportional action\nmsg.outer_output = msg.outer_error * flow.get('outer_p');\n\n// Update outer integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_integrator = flow.get('outer_integrator');\n\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.outer_integrator += msg.interval * Math.max(Math.min(msg.outer_error, 1), -1)\n    \n    // Bound total outer integrator by absolute maximum\n    msg.outer_integrator = Math.max(Math.min(msg.outer_integrator, flow.get('outer_integrator_max')), -flow.get('outer_integrator_max'));\n\n    // Output updated integrator to flow context\n    flow.set('outer_integrator', msg.outer_integrator)\n    \n    // Calculate intergral action\n    msg.outer_output += msg.outer_integrator * flow.get('outer_i');\n}\n\n// Calculate derivate and derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.outer_derivative = (msg.outer_error - flow.get('last_outer_error'))/msg.interval\n    msg.outer_output += msg.outer_derivative * flow.get('outer_d')\n}\n\n// Bound outer_output by [outer_min, outer_max]\nmsg.outer_output = Math.max(Math.min(msg.outer_output, flow.get('outer_max')), flow.get('outer_min'));\n\n// Set inner_target\nmsg.inner_target = Math.min(msg.outer_target + msg.outer_output, 90)\n\n// Output updated last_outer_error to flow context\nmsg.last_outer_error = msg.outer_error;\nflow.set('last_outer_error', msg.last_outer_error);\n\n///////////////////////////////////////////////////////////////\n// Begin Inner Control Loop\n// Output from inner control loop will be RIMS element duty %\n///////////////////////////////////////////////////////////////\n\n// Calculate inner error\nmsg.inner_error = msg.inner_target - global.get('temp-RIMS');\n\n// Calculate proportional action\nmsg.inner_output = msg.inner_error * flow.get('inner_p');\n// Update inner integrator and calculate integral action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_integrator = flow.get('inner_integrator');\n    // For purposes of integrator, bound error by [-1, 1]\n    msg.inner_integrator += msg.interval * Math.max(Math.min(msg.inner_error, 1), -1);\n    \n    // Bound total inner integrator by absolute maximum\n    msg.inner_integrator = Math.max(Math.min(msg.inner_integrator, flow.get('inner_integrator_max')), -flow.get('inner_integrator_max'));\n    \n    // Output updated integrator to flow context\n    flow.set('inner_integrator', msg.inner_integrator);\n    \n    // Calculate intergral action\n    msg.inner_output += msg.inner_integrator * flow.get('inner_i');\n}\n\n// Calculate derivative action\n// Skip for first iteration\nif(!isNaN(msg.interval)){\n    msg.inner_derivative = (msg.inner_error - flow.get('last_inner_error'))/msg.interval;\n    msg.inner_output += msg.inner_derivative * flow.get('inner_d');\n}\n\n// Bound inner_output by [0.0, max_output]\nmsg.inner_output = Math.round(Math.max(Math.min(msg.inner_output, flow.get('inner_max')), 0.0));\n\n// Output inner_output to flow context\nflow.set('inner_output', msg.inner_output);\n\n// Output updated last_inner_error to flow context\nmsg.last_inner_error = msg.inner_error;\nflow.set('last_inner_error', msg.last_inner_error);\n\n// Set payload to element output (inner_output)\nmsg.payload = msg.inner_output;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "///////////////////////////////////////////////////////////////\n// brew2 Cascade PID initialization\n// Justin Angevaare\n// Nov. 2020\n///////////////////////////////////////////////////////////////\n\n///////////////////////////////////////////////////////////////\n// Outer loop parameter values\n///////////////////////////////////////////////////////////////\n\nflow.set('outer_p',                   5.0); // Kp\nflow.set('outer_i',                   1.0); // Ki\nflow.set('outer_d',                  50.0); // Kd\nflow.set('outer_min',                -2.0); // inner - outer loop target temp (degrees)\nflow.set('outer_max',                 8.0); // inner - outer loop target temp\nflow.set('outer_max_integral_action', 3.0); // inner - outer loop target temp (degrees)\n\n// Integrator max calculation\nif(flow.get('outer_i') > 0.0){\n    flow.set('outer_integrator_max', Math.abs(flow.get('outer_max_integral_action'))/flow.get('outer_i'))}else {\n        flow.set('outer_integrator_max', 0.0)}\n\n///////////////////////////////////////////////////////////////\n// Inner loop parameter values\n///////////////////////////////////////////////////////////////\n\nflow.set('inner_p',                   20.0); // Kp\nflow.set('inner_i',                    1.0); // Ki\nflow.set('inner_d',                   30.0); // Kd\nflow.set('inner_limit',               40.0); // % of element output\nflow.set('inner_max_integral_action', 20.0); // % of element output\n\n// Integrator max calculation\nif(flow.get('inner_i')>0.0){\n    flow.set('inner_integrator_max', Math.abs(flow.get('inner_max_integral_action'))/flow.get('inner_i'))}else {\n        flow.set('inner_integrator_max', 0.0)}\n        \n///////////////////////////////////////////////////////////////\n// Recorded values\n///////////////////////////////////////////////////////////////\n\nflow.set('last_outer_error', 0.0)\nflow.set('outer_integrator', 0.0)\nflow.set('outer_derivative', 0.0)\nflow.set('outer_output',     0.0)\n\nflow.set('last_inner_error', 0.0)\nflow.set('inner_integrator', 0.0)\nflow.set('inner_derivative', 0.0)\nflow.set('inner_output',     0.0)\n",
@@ -17817,8 +17819,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 650,
-        "y": 820,
+        "x": 1090,
+        "y": 720,
         "wires": [
             [
                 "1e6856d6.70ca49"
@@ -17827,19 +17829,6 @@
                 "25807ef7.58ca92"
             ]
         ]
-    },
-    {
-        "id": "ed1e6f72.2bc58",
-        "type": "influxdb batch",
-        "z": "e2318.a76b94e88",
-        "d": true,
-        "influxdb": "ea29760c.3042e8",
-        "precision": "",
-        "retentionPolicy": "",
-        "name": "",
-        "x": 1740,
-        "y": 1060,
-        "wires": []
     },
     {
         "id": "b66d3f0e.96db6",
@@ -17859,14 +17848,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1510,
-        "y": 1040,
+        "x": 1190,
+        "y": 880,
         "wires": [
             [
-                "8f6e90af.f9fed8"
+                "da73f766.a02b1"
             ],
             [
-                "ed1e6f72.2bc58"
+                "94f9785f.b857e8"
             ]
         ]
     },
@@ -17888,8 +17877,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 600,
+        "x": 350,
+        "y": 640,
         "wires": [
             [
                 "e5443a71.7e01c"
@@ -17910,8 +17899,8 @@
         "precision": "",
         "retentionPolicy": "",
         "org": "brew2",
-        "x": 990,
-        "y": 620,
+        "x": 490,
+        "y": 800,
         "wires": [
             [
                 "5d34276a.d3bf18"
@@ -17928,8 +17917,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 720,
-        "y": 620,
+        "x": 440,
+        "y": 720,
         "wires": [
             [
                 "5d1cf281.8a7fbc"
@@ -17950,8 +17939,8 @@
         "retentionPolicyV18Flux": "",
         "org": "brew2",
         "bucket": "brew2",
-        "x": 900,
-        "y": 840,
+        "x": 1340,
+        "y": 740,
         "wires": []
     },
     {
@@ -17964,8 +17953,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1250,
-        "y": 620,
+        "x": 770,
+        "y": 660,
         "wires": [
             [
                 "773e9b21.018914"
@@ -17973,20 +17962,274 @@
         ]
     },
     {
-        "id": "834bac3c.e9919",
-        "type": "debug",
+        "id": "143c5ba5.25b8c4",
+        "type": "influxdb out",
         "z": "e2318.a76b94e88",
+        "influxdb": "ea29760c.3042e8",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1230,
-        "y": 700,
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "brew2",
+        "bucket": "brew2",
+        "x": 1760,
+        "y": 1100,
         "wires": []
+    },
+    {
+        "id": "94f9785f.b857e8",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"PID-boil-main-loop\",\nmsg.payload = [\n    {\n        target: msg.target,\n        output: msg.output,\n        error: msg.last_error,\n        integrator: msg.integrator,\n        derivative: msg.derivative,\n        //active: global.get(\"bk_pid\"),\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 860,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
+    },
+    {
+        "id": "286e0a7.7e86bf6",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 960,
+        "wires": [
+            [
+                "718d7f81.ae9dd"
+            ],
+            [
+                "99cd0539.50b4c8"
+            ]
+        ]
+    },
+    {
+        "id": "99cd0539.50b4c8",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"output-BK\";\nmsg.payload = [\n    {\n        duty: msg.payload,\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 940,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
+    },
+    {
+        "id": "2104da9.bf76026",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 1020,
+        "wires": [
+            [
+                "7157ddb4.749094"
+            ],
+            [
+                "deb8df8a.9ce05"
+            ]
+        ]
+    },
+    {
+        "id": "deb8df8a.9ce05",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"PID-mash-inner-loop\";\nmsg.payload = [\n    {\n        target: msg.inner_target,\n        output: msg.inner_output,\n        error: msg.last_inner_error,\n        integrator: msg.inner_integrator,\n        derivative: msg.inner_derivative,\n        //active: global.get(\"rims_on\"),\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 1020,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
+    },
+    {
+        "id": "32e537d7.b4dd28",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 1060,
+        "wires": [
+            [
+                "f52c348.3c13fc8"
+            ],
+            [
+                "a3d22027.a5b09"
+            ]
+        ]
+    },
+    {
+        "id": "a3d22027.a5b09",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"PID-mash-outer-loop\";\nmsg.payload = [\n    {\n        target: msg.outer_target,\n        output: msg.outer_output,\n        error: msg.last_outer_error,\n        integrator: msg.outer_integrator,\n        derivative: msg.outer_derivative,\n        //active: global.get(\"rims_on\"),\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 1100,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
+    },
+    {
+        "id": "5c9094dd.355a7c",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 1120,
+        "wires": [
+            [
+                "44af71b8.d965b"
+            ],
+            [
+                "cb20cb83.a43418"
+            ]
+        ]
+    },
+    {
+        "id": "cb20cb83.a43418",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"output-RIMS\";\nmsg.payload = [\n    {\n        duty: msg.payload,\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 1180,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
+    },
+    {
+        "id": "49054b64.3060d4",
+        "type": "switch",
+        "z": "e2318.a76b94e88",
+        "name": "InfluxDB Version",
+        "property": "influxdb_v2",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 1200,
+        "wires": [
+            [
+                "68c8628b.7cf11c"
+            ],
+            [
+                "f39d05ae.e40dd8"
+            ]
+        ]
+    },
+    {
+        "id": "f39d05ae.e40dd8",
+        "type": "function",
+        "z": "e2318.a76b94e88",
+        "name": "Format output for influxdb",
+        "func": "msg.measurement = \"volume-BK\";\nmsg.payload = [\n    {\n        volume: msg.volume,\n        target: msg.target,\n        time: new Date()\n    },\n    {\n        brew: global.get(\"brew-label\")\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1450,
+        "y": 1260,
+        "wires": [
+            [
+                "143c5ba5.25b8c4"
+            ]
+        ]
     }
 ]
