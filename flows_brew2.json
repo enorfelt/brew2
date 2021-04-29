@@ -1009,8 +1009,17 @@
         "tab": "b78b37e1.2bfbe8",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": 6,
         "collapse": false
+    },
+    {
+        "id": "4f76d3d.25da52c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b105c182.ea8e6",
+        "order": 8,
+        "width": 6,
+        "height": 1
     },
     {
         "id": "ba5b776f.cbd1c8",
@@ -5089,6 +5098,7 @@
         "payload": "true",
         "payloadType": "bool",
         "topic": "",
+        "topicType": "str",
         "x": 290,
         "y": 140,
         "wires": [
@@ -18266,27 +18276,6 @@
         ]
     },
     {
-        "id": "39d88128.331a9e",
-        "type": "pid-autotune",
-        "z": "91e7cb95.cf1028",
-        "name": "BK Autotune",
-        "outstep": 100,
-        "maxout": 100,
-        "lookback": 30,
-        "setpoint": 65,
-        "setpointType": "num",
-        "tempVariable": "temp-BK",
-        "tempVariableType": "global",
-        "tempVariableMsgTopic": "temp-BK",
-        "x": 510,
-        "y": 160,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "4fabbe70.9553b",
         "type": "ui_button",
         "z": "b764cb6a.5d4448",
@@ -18318,7 +18307,7 @@
         "z": "b764cb6a.5d4448",
         "name": "",
         "group": "b105c182.ea8e6",
-        "order": 6,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -18335,6 +18324,425 @@
         "wires": [
             [
                 "9f92ccc0.54cce"
+            ]
+        ]
+    },
+    {
+        "id": "71c5982a.e3ccd8",
+        "type": "ui_button",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "group": "b105c182.ea8e6",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#66cc00",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "3a3e9553.cb12ca"
+            ]
+        ]
+    },
+    {
+        "id": "dd1778fa.e8b7f8",
+        "type": "ui_chart",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "group": "b105c182.ea8e6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No Data",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1.5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 930,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da2f8446.de7688",
+        "type": "ui_template",
+        "z": "91e7cb95.cf1028",
+        "group": "b105c182.ea8e6",
+        "name": "log",
+        "order": 5,
+        "width": 6,
+        "height": 3,
+        "format": "<div class=\"log\">\n    <span ng-if=\"msg.payload.length < 1\" style=\"color: #c3c3c3;position: absolute;left: 50%;transform: translate(-50%, -50%);top: 50%;\">Not Log Data</span>\n    <div ng-if=\"msg.payload.length > 0\" style=\"overflow-y: auto;\">\n        <ul class=\"log-list\" style=\"list-style: none; margin: 0; padding: 0;\">\n            <li ng-repeat=\"log in msg.payload\">{{log.date}}: {{log.msg}}</li>\n        </ul>\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 810,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad1da314.eb35c",
+        "type": "ui_text",
+        "z": "91e7cb95.cf1028",
+        "group": "b105c182.ea8e6",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Kp",
+        "format": "{{msg.payload.Kp || 0}}",
+        "layout": "row-spread",
+        "x": 510,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "216203f2.403eec",
+        "type": "ui_text",
+        "z": "91e7cb95.cf1028",
+        "group": "b105c182.ea8e6",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Ki",
+        "format": "{{msg.payload.Ki || 0}}",
+        "layout": "row-spread",
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "82096ba8.efc7e8",
+        "type": "ui_text",
+        "z": "91e7cb95.cf1028",
+        "group": "b105c182.ea8e6",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Kd",
+        "format": "{{msg.payload.Kd || 0}}",
+        "layout": "row-spread",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b4c64d32.756a4",
+        "type": "change",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Temp",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "temp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 200,
+        "wires": [
+            [
+                "dd1778fa.e8b7f8"
+            ]
+        ]
+    },
+    {
+        "id": "2640bba7.21e574",
+        "type": "inject",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 100,
+        "wires": [
+            [
+                "7e07bd30.f2fdc4"
+            ]
+        ]
+    },
+    {
+        "id": "7e07bd30.f2fdc4",
+        "type": "change",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 140,
+        "wires": [
+            [
+                "dd1778fa.e8b7f8"
+            ]
+        ]
+    },
+    {
+        "id": "a9ef192b.c7f7a8",
+        "type": "function",
+        "z": "91e7cb95.cf1028",
+        "name": "prep log",
+        "func": "var logItemArray = msg.payload.split(' - ');\nvar date = new Date(msg.timestamp);\n\nvar logItem = {\n    date: msg.timestamp,\n    msg: logItemArray[1]\n};\n\n\nvar logItems = flow.get(\"logItems\") || [];\nlogItems.unshift(logItem);\nmsg.payload = logItems;\nflow.set(\"logItems\", logItems);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nflow.set(\"logItems\", []);",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "da2f8446.de7688"
+            ]
+        ]
+    },
+    {
+        "id": "7c837b1e.ac3c54",
+        "type": "inject",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "da2f8446.de7688"
+            ]
+        ]
+    },
+    {
+        "id": "d5dab6f0.7e8138",
+        "type": "ui_button",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "group": "b105c182.ea8e6",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "grey",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "3c7059a6.6e12b6"
+            ]
+        ]
+    },
+    {
+        "id": "3c7059a6.6e12b6",
+        "type": "change",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cmd",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "3a3e9553.cb12ca"
+            ]
+        ]
+    },
+    {
+        "id": "3a3e9553.cb12ca",
+        "type": "pid-autotune",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "outstep": 100,
+        "maxout": 100,
+        "lookback": 30,
+        "setpoint": 65,
+        "setpointType": "num",
+        "tempVariable": "temp",
+        "tempVariableType": "flow",
+        "tempVariableMsgTopic": "temp-BK",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "ad1da314.eb35c",
+                "216203f2.403eec",
+                "82096ba8.efc7e8"
+            ],
+            [
+                "1c03b806.c27e38"
+            ],
+            [
+                "7113bb05.868314"
+            ]
+        ]
+    },
+    {
+        "id": "1c03b806.c27e38",
+        "type": "kettle-sim",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "diam": 35,
+        "volume": 40,
+        "temp": "64.5",
+        "power": "5",
+        "ambientTemp": "-20",
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "b4c64d32.756a4"
+            ]
+        ]
+    },
+    {
+        "id": "a1eaf8c7.16a398",
+        "type": "debug",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7113bb05.868314",
+        "type": "moment",
+        "z": "91e7cb95.cf1028",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "ETC/UTC",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "sv-SE",
+        "output": "timestamp",
+        "outputType": "msg",
+        "outTz": "Europe/Stockholm",
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "a9ef192b.c7f7a8"
             ]
         ]
     }
